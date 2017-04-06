@@ -1,6 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 
@@ -10,6 +11,7 @@ body{
 }
 .telegram{
 	width: 890px;
+	min-height: 806px;
 	margin: 0 auto;
 	text-align: center;
 	font-size: 14px;
@@ -26,9 +28,39 @@ body{
 	.slider{
 		input{display:none;}
 		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		align-items: center;
+		.slides{
+			display: flex;
+			justify-content: space-around;
+			width: 49%;
+		}
+		.iphone-img{
+			width: 282px;
+			height: 573px;
+		}
+		label{
+			cursor: pointer;
+		}
 		label.slider-buttons{
 			line-height: 1.22;
 		}
+
+		label.slider-points {
+			height: 18px;
+			width: 18px;
+			display: inline-block;
+			background-color: red;
+		}
+		#telegram-radio-1:checked ~ .point-controls label:nth-of-type(1),
+		#telegram-radio-2:checked ~ .point-controls label:nth-of-type(2){
+			background: blue;
+		}
+		#telegram-radio-1:checked ~ .wrapper-slider-buttons label:nth-of-type(1),
+		#telegram-radio-2:checked ~ .wrapper-slider-buttons label:nth-of-type(2){
+			background: blue;
+		}
+
 	}
 }
